@@ -1,10 +1,17 @@
+import { call } from 'redux-saga/effects';
+import { fetchTodos } from 'utils/api';
+import { URL } from 'config';
+
 //actions
-const ADD_TODO = 'todo/ADD_TODO' as const;
-const REMOVE_TODO = 'todo/REMOVE_TODO' as const;
-const CHANGE_STATUS_TODO = 'todo/CHANGE_STATUS_TODO' as const;
+export const ADD_TODO = 'todo/ADD_TODO' as const;
+export const REMOVE_TODO = 'todo/REMOVE_TODO' as const;
+export const CHANGE_STATUS_TODO = 'todo/CHANGE_STATUS_TODO' as const;
 
 //action creators
-export const addTodo = (text: string) => ({ type: ADD_TODO, payload: text });
+export const addTodo = (content: string) => ({
+  type: ADD_TODO,
+  payload: content,
+});
 export const removeTodo = (id: number) => ({ type: REMOVE_TODO, payload: id });
 export const changeStatusTodo = (id: number) => ({
   type: CHANGE_STATUS_TODO,
@@ -20,23 +27,12 @@ type TodoAction =
 //todo interface
 export interface Itodo {
   id: number;
-  text: string;
-  done: boolean;
+  content: string;
+  isChecked: boolean;
 }
 
 //initial todos
-export const initialState: Itodo[] = [
-  {
-    id: 0,
-    text: 'todo1',
-    done: false,
-  },
-  {
-    id: 1,
-    text: 'todo2',
-    done: false,
-  },
-];
+export const initialState: Itodo[] = [];
 
 //Reducer
 export default function todoReducer(
@@ -48,8 +44,8 @@ export default function todoReducer(
       const id = Math.max(...state.map((todo) => todo.id)) + 1;
       return state.concat({
         id,
-        text: action.payload,
-        done: false,
+        content: action.payload,
+        isChecked: false,
       });
 
     case REMOVE_TODO:
@@ -57,7 +53,9 @@ export default function todoReducer(
 
     case CHANGE_STATUS_TODO:
       return state.map((todo) =>
-        todo.id === action.payload ? { ...todo, done: !todo.done } : todo,
+        todo.id === action.payload
+          ? { ...todo, isChecked: !todo.isChecked }
+          : todo,
       );
 
     default:

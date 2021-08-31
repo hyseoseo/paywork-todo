@@ -1,14 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { configureStore } from 'configureStore';
+
 import './index.css';
 
-import rootReducer from 'modules';
 import App from './App';
 
-//store 생성
-const store = createStore(rootReducer);
+const initialState = {
+  data: [],
+  loading: false,
+  error: '',
+};
+
+const store = configureStore(initialState);
+
+//sagaMiddleware.run();
 
 ReactDOM.render(
   <Provider store={store}>

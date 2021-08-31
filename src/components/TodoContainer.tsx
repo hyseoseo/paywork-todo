@@ -35,7 +35,7 @@ const TodoContainer: React.FC<IProps> = ({ todos }) => {
       {todos.map((todo) => {
         return (
           <div key={todo.id} onClick={() => handleClick(todo.id)}>
-            {todo.text}
+            {todo.content}
             <button onClick={() => handleRemove(todo.id)}>삭제</button>
           </div>
         );
