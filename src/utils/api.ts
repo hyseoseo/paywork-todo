@@ -1,14 +1,19 @@
 import { URL } from 'config';
 
-export const fetchTodos = async () => {
+export interface Itodo {
+  id: number;
+  content: string;
+  isChecked: boolean;
+}
+
+export const fetchTodos = async (): Promise<Itodo> => {
   try {
     const response = await fetch(URL, {
       method: 'GET',
     });
-    const data = await response.json();
-    return data;
+    return await response.json();
   } catch (e) {
-    console.log(e);
+    throw new Error();
   }
 };
 

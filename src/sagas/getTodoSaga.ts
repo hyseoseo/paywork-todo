@@ -3,7 +3,7 @@ import {
   LOAD_TODOS_ERROR,
   LOAD_TODOS_LOADING,
   LOAD_TODOS_SUCCESS,
-} from './actions';
+} from '../store/actions';
 import { URL } from 'config';
 
 async function fetchAsync(): Promise<any> {
