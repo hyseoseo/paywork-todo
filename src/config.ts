@@ -1,5 +1,4 @@
-export const BASE_URL =
-  'https://my-json-server.typicode.com/hyseoseo/paywork-todo-mockserver';
+export const BASE_URL = 'https://paywork-todos.herokuapp.com';
 
 export interface Itodo {
   id: string;
