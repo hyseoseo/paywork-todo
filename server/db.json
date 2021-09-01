@@ -1,0 +1,22 @@
+{
+  "todo": [
+    {
+      "content": "주석 달기",
+      "isChecked": true,
+      "createdAt": "2021-09-01T15:03:02.930Z",
+      "id": 1
+    },
+    {
+      "content": "any 없애기",
+      "isChecked": false,
+      "createdAt": "2021-09-01T15:03:09.562Z",
+      "id": 2
+    },
+    {
+      "content": "배포",
+      "isChecked": false,
+      "createdAt": "2021-09-01T15:03:12.634Z",
+      "id": 3
+    }
+  ]
+}
