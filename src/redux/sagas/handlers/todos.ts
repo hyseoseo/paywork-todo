@@ -4,10 +4,10 @@ import {
   addTodo,
   setTodos,
   getTodos,
-  TodoAction,
   toggleTodo,
+  removeTodo,
 } from '../../ducks/todos';
-import { requestGetTodos, requestPostNewTodo } from '../requests/todos';
+import { requestGetTodos } from '../requests/todos';
 import { BASE_URL } from 'config';
 
 export function* handleGetTodos() {
@@ -44,24 +44,22 @@ export function* handleToggleTodo(action: ReturnType<typeof toggleTodo>) {
   const postcall = () => {
     return axios.request({
       method: 'patch',
-      url: `${BASE_URL}/todo/${action.payload}`,
+      url: `${BASE_URL}/todo/${action.payload.id}`,
       data: {
-        isChecked: true,
+        isChecked: action.payload.isChecked,
       },
     });
   };
 
   try {
-    const res: AxiosResponse = yield call(postcall);
-    const { data } = res;
-    console.log(res);
+    yield call(postcall);
     yield put(getTodos());
   } catch (error) {
     console.log(error);
   }
 }
 
-export function* handleRemoveTodo(action: ReturnType<typeof toggleTodo>) {
+export function* handleRemoveTodo(action: ReturnType<typeof removeTodo>) {
   const postcall = () => {
     return axios.request({
       method: 'delete',
@@ -70,9 +68,7 @@ export function* handleRemoveTodo(action: ReturnType<typeof toggleTodo>) {
   };
 
   try {
-    const res: AxiosResponse = yield call(postcall);
-    const { data } = res;
-    console.log(res);
+    yield call(postcall);
     yield put(getTodos());
   } catch (error) {
     console.log(error);

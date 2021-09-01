@@ -1,12 +1,15 @@
 import { Itodo } from 'config';
-import { RootState } from 'redux/configureStore';
 
 export const GET_TODOS = 'GET_TODOS' as const;
 export const SET_TODOS = 'SET_TODOS' as const;
-
 export const ADD_TODO = 'ADD_TODO' as const;
 export const REMOVE_TODO = 'REMOVE_TODO' as const;
 export const TOGGLE_TODO = 'TOGGLE_TODO' as const;
+
+export type toggleObject = {
+  id: string;
+  isChecked: boolean;
+};
 
 export const getTodos = () => ({
   type: GET_TODOS,
@@ -27,9 +30,9 @@ export const removeTodo = (id: string) => ({
   payload: id,
 });
 
-export const toggleTodo = (id: string) => ({
+export const toggleTodo = (obj: toggleObject) => ({
   type: TOGGLE_TODO,
-  payload: id,
+  payload: obj,
 });
 
 export type TodoAction =
@@ -41,18 +44,13 @@ export type TodoAction =
 
 const initialState: Itodo[] = [];
 
-export default (state = initialState, action: TodoAction) => {
+const todoReducer = (state = initialState, action: TodoAction) => {
   switch (action.type) {
     case SET_TODOS:
       return action.payload;
-    /*
-    case REMOVE_TODO:
-      const filtered = state.todos.filter((todo) => {
-        todo.id !== action.id;
-      });
-      return { ...state, todos: filtered };
-    */
     default:
       return state;
   }
 };
+
+export default todoReducer;

@@ -7,7 +7,7 @@ import { getTodos, addTodo, toggleTodo, removeTodo } from 'redux/ducks/todos';
 export default function App() {
   const dispatch = useDispatch();
   const todos = useSelector((state: RootState) => state.todos);
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState<string>('');
 
   useEffect(() => {
     dispatch(getTodos());
@@ -27,8 +27,9 @@ export default function App() {
     dispatch(removeTodo(id));
   };
 
-  const handleToggle = (id: string) => {
-    dispatch(toggleTodo(id));
+  const handleCheck = (e: React.ChangeEvent<HTMLInputElement>, id: string) => {
+    const obj = { id: id, isChecked: e.target.checked };
+    dispatch(toggleTodo(obj));
   };
 
   return (
@@ -38,7 +39,11 @@ export default function App() {
           todos.map((todo: Itodo) => (
             <li key={todo.id}>
               <button onClick={() => handleDelete(todo.id)}>delete</button>
-              <button onClick={() => handleToggle(todo.id)}>done</button>
+              <input
+                type="checkbox"
+                checked={todo.isChecked}
+                onChange={(e) => handleCheck(e, todo.id)}
+              />
               <h1>
                 {' '}
                 {todo.isChecked ? `${todo.content} done` : todo.content}{' '}
