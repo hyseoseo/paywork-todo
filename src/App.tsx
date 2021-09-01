@@ -1,17 +1,21 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from 'modules';
-import { fetchTodos, postNewTodo } from 'utils/api';
-import TodoContainer from 'components/TodoContainer';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'redux/configureStore';
+import { getTodos } from 'redux/ducks/todos';
 
-const App: React.FC = () => {
-  const todos = useSelector((state => state.loadTodoReducer);
+export default function App() {
+  const dispatch = useDispatch();
+  const todos = useSelector((state: RootState) => state.todos.todos);
+
+  useEffect(() => {
+    dispatch(getTodos());
+  }, [dispatch]);
+
+  console.log(todos);
 
   return (
-    <div>
-      <TodoContainer todos={todos} />
+    <div className="App">
+      {todos && todos.map((todo: any) => <h1> Hello, {todo.content} </h1>)}
     </div>
   );
-};
-
-export default App;
+}

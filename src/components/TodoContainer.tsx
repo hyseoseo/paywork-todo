@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
-import { Itodo } from 'modules/todos';
-import { addTodo, removeTodo, changeStatusTodo } from 'modules/todos';
+import { Itodo } from 'config';
 
 interface IProps {
   todos: Itodo[];
@@ -14,16 +12,16 @@ const TodoContainer: React.FC<IProps> = ({ todos }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(addTodo(value));
+    //dispatch(addTodo(value));
     setValue('');
   };
 
   const handleClick = (id: number) => {
-    dispatch(changeStatusTodo(id));
+    //dispatch(changeStatusTodo(id));
   };
 
   const handleRemove = (id: number) => {
-    dispatch(removeTodo(id));
+    //dispatch(removeTodo(id));
   };
 
   return (
