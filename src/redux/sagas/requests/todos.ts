@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { BASE_URL } from 'config';
+import { BASE_URL, SORT_OPTION } from 'config';
 
 export function requestGetTodos() {
   return axios.request({
     method: 'get',
-    url: `${BASE_URL}/todo`,
+    url: `${BASE_URL}/todo?_sort=${SORT_OPTION}`,
   });
 }
 
