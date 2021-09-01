@@ -1,16 +1,12 @@
 import React from 'react';
 import { css } from '@emotion/react';
 import { BOX_STYLE, COLOR_STYLE, FONT_SIZE_STYLE } from 'styles/GlobalStyles';
-import { getCurrentDate } from 'utils/getCurrentDate';
 import TodoCreate from './TodoCreate';
 
 const TodoHead: React.FC = () => {
-  const currentDate = getCurrentDate();
-
   return (
     <header css={Header}>
       <span css={LogoStyle}>Todo</span>
-      {/*<h1 css={DateStyle}>{currentDate}</h1>*/}
       <TodoCreate />
     </header>
   );

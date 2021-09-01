@@ -13,12 +13,14 @@ const TodoCreate: React.FC = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState<string>('');
 
+  //addTodo 액션 생성 함수 호출하여 handleNewTodo saga 호출
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     dispatch(addTodo(value));
     setValue('');
   };
 
+  //input value로 value state setting
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setValue(e.target.value);
   };

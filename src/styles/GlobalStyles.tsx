@@ -44,7 +44,7 @@ export const FlexColCenter = css`
 `;
 
 export const ButtonDefault = css`
-  border: 0;
+  border: none;
   background-color: inherit;
   cursor: pointer;
 `;

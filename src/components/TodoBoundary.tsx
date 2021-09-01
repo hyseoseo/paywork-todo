@@ -4,6 +4,7 @@ import { COLOR_STYLE, FlexCenter, FONT_SIZE_STYLE } from 'styles/GlobalStyles';
 import { IProps } from 'config';
 
 const TodoBoundary: React.FC<IProps> = ({ todos }) => {
+  //undone task 개수 구하여 표시
   const undoneTasks: number = todos.filter(
     (todo) => todo.isChecked === false,
   ).length;

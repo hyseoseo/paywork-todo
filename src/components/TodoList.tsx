@@ -9,19 +9,22 @@ import {
   ButtonDefault,
 } from 'styles/GlobalStyles';
 import { Itodo, IProps } from 'config';
-import { getTodos, addTodo, toggleTodo, removeTodo } from 'redux/ducks/todos';
+import { toggleTodo, removeTodo } from 'redux/ducks/todos';
 
 const TodoList: React.FC<IProps> = ({ todos }) => {
   const dispatch = useDispatch();
 
+  //removeTodo 액션 생성함수 호출하여 handleRemoveTodo saga 호출
   const handleDelete = (id: string) => {
     dispatch(removeTodo(id));
   };
 
+  //toggleTodo 액션 생성함수 호출하여 handleToggleTodo saga 호출
   const handleCheck = (e: React.ChangeEvent<HTMLInputElement>, id: string) => {
     const obj = { id: id, isChecked: e.target.checked };
     dispatch(toggleTodo(obj));
   };
+
   return (
     <ul css={Container}>
       {todos &&
@@ -73,18 +76,20 @@ const List = css`
 `;
 
 const Text = css`
+  margin-left: 15px;
   font-size: ${FONT_SIZE_STYLE.medium};
-  padding: 10px 0;
 `;
 
 const Done = css`
   ${Text}
-  color: ${COLOR_STYLE.grey};
+  color: ${COLOR_STYLE.greyDarker};
   text-decoration: line-through;
 `;
 
 const DeleteButton = css`
   ${ButtonDefault}
+  position: absolute;
+  right: 10px;
   transform: translate(-25%, 15%);
   svg {
     color: ${COLOR_STYLE.primary};
@@ -93,7 +98,7 @@ const DeleteButton = css`
   }
   &:hover {
     svg {
-      color: ${COLOR_STYLE.red};
+      color: ${COLOR_STYLE.greyDarkest};
     }
   }
 `;

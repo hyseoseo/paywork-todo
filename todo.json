@@ -1,46 +1,22 @@
 {
   "todo": [
     {
-      "content": "todo6",
+      "content": "주석 달기",
       "isChecked": true,
-      "createdAt": "2021-09-01T13:19:40.434Z",
-      "id": "XXs6I7-"
+      "createdAt": "2021-09-01T15:03:02.930Z",
+      "id": 1
     },
     {
-      "content": "sdgsdgsdgs",
-      "isChecked": true,
-      "createdAt": "2021-09-01T13:29:16.854Z",
-      "id": "8a0xUju"
-    },
-    {
-      "content": "sdgsdgsg",
+      "content": "any 없애기",
       "isChecked": false,
-      "createdAt": "2021-09-01T13:29:17.895Z",
-      "id": "9OkepGm"
+      "createdAt": "2021-09-01T15:03:09.562Z",
+      "id": 2
     },
     {
-      "content": "22",
+      "content": "배포",
       "isChecked": false,
-      "createdAt": "2021-09-01T14:18:38.486Z",
-      "id": "CPRamwe"
-    },
-    {
-      "content": "2",
-      "isChecked": true,
-      "createdAt": "2021-09-01T14:18:39.821Z",
-      "id": "-kY1RR1"
-    },
-    {
-      "content": "sdgsdgsdgsdgsdg",
-      "isChecked": false,
-      "createdAt": "2021-09-01T14:37:41.384Z",
-      "id": "_7wdUSP"
-    },
-    {
-      "content": "sdgsdgsdgsdgsgd",
-      "isChecked": false,
-      "createdAt": "2021-09-01T14:37:42.968Z",
-      "id": "U2lLPrp"
+      "createdAt": "2021-09-01T15:03:12.634Z",
+      "id": 3
     }
   ]
 }
