@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'redux/configureStore';
 import { getTodos, addTodo } from 'redux/ducks/todos';
+import axios from 'axios';
+import { URL } from 'config';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -13,10 +15,18 @@ export default function App() {
     dispatch(getTodos());
   }, [dispatch]);
 
-  console.log(todos);
-
+  const postcall = async () => {
+    const res = await axios.post(URL, {
+      content: value,
+      isChecked: false,
+      createdAt: new Date(),
+    });
+    console.log(res.data);
+    return res.data;
+  };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+    //postcall();
     dispatch(addTodo(value));
   };
 

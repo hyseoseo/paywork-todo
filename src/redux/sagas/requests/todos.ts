@@ -13,6 +13,7 @@ export function requestPostNewTodo(content: string) {
     method: 'post',
     url: URL,
     data: {
+      id: 0,
       content: content,
       isChecked: false,
       createdAt: new Date(),
