@@ -1,52 +1,16 @@
 {
   "todo": [
     {
-      "id": 1,
+      "id": "1",
       "content": "todo1",
-      "isChecked": true,
-      "createdAt": "2021-05-26T11:51:05.097Z"
-    },
-    {
-      "id": 2,
-      "content": "todo2",
       "isChecked": false,
-      "createdAt": "2021-05-26T16:15:25.729Z"
+      "createdAt": "2021-05-26T11:51:05.097Z"
     },
     {
       "content": "todo4",
       "isChecked": true,
       "createdAt": "2021-08-31T03:22:00.031Z",
-      "id": 3
-    },
-    {
-      "content": "todo5",
-      "isChecked": false,
-      "createdAt": "2021-09-01T07:11:38.316Z",
-      "id": 4
-    },
-    {
-      "content": "todo6",
-      "isChecked": false,
-      "createdAt": "2021-09-01T07:12:06.318Z",
-      "id": 5
-    },
-    {
-      "content": "todo7",
-      "isChecked": false,
-      "createdAt": "2021-09-01T07:13:00.204Z",
-      "id": 6
-    },
-    {
-      "content": "todo8",
-      "isChecked": false,
-      "createdAt": "2021-09-01T07:14:31.633Z",
-      "id": 7
-    },
-    {
-      "content": "todo9",
-      "isChecked": false,
-      "createdAt": "2021-09-01T07:14:35.641Z",
-      "id": 8
+      "id": "3"
     }
   ]
 }
