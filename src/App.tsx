@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'redux/configureStore';
 import { getTodos, addTodo, toggleTodo, removeTodo } from 'redux/ducks/todos';
+import TodoContainer from 'components/TodoContainer';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -33,7 +34,9 @@ export default function App() {
   };
 
   return (
-    <div className="App">
+    <>
+      <TodoContainer todos={todos} />
+      {/*}
       <ul>
         {todos &&
           todos.map((todo: Itodo) => (
@@ -55,6 +58,7 @@ export default function App() {
         <input value={value} onChange={handleChange} />
         <button type="submit">추가</button>
       </form>
-    </div>
+          */}
+    </>
   );
 }
