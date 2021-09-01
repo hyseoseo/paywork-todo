@@ -65,11 +65,6 @@ const Input = css`
   }
 `;
 
-const InputError = css`
-  ${Input}
-  border-color: ${COLOR_STYLE.red};
-`;
-
 const AddBtn = css`
   ${ButtonDefault}
   position: absolute;
