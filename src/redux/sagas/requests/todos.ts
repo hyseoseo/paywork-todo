@@ -7,3 +7,15 @@ export function requestGetTodos() {
     url: URL,
   });
 }
+
+export function requestPostNewTodo(content: string) {
+  return axios.request({
+    method: 'post',
+    url: URL,
+    data: {
+      content: content,
+      isChecked: false,
+      createdAt: new Date(),
+    },
+  });
+}

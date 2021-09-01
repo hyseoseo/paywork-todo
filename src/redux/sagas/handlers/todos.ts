@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
 import { call, put } from 'redux-saga/effects';
 import { setTodos } from '../../ducks/todos';
-import { requestGetTodos } from '../requests/todos';
+import { requestGetTodos, requestPostNewTodo } from '../requests/todos';
 
 export function* handleGetTodos() {
   try {
