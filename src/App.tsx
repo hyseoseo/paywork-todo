@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from 'redux/configureStore';
-import { getTodos } from 'redux/ducks/todos';
+import { RootState } from 'store/configureStore';
+import { getTodos } from 'store/actions/todos';
 import TodoContainer from 'components/todo/TodoContainer';
 
 export default function App() {

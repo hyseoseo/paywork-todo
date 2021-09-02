@@ -41,16 +41,3 @@ export type TodoAction =
   | ReturnType<typeof toggleTodo>
   | ReturnType<typeof getTodos>
   | ReturnType<typeof setTodos>;
-
-const initialState: Itodo[] = [];
-
-const todoReducer = (state = initialState, action: TodoAction) => {
-  switch (action.type) {
-    case SET_TODOS:
-      return action.payload;
-    default:
-      return state;
-  }
-};
-
-export default todoReducer;

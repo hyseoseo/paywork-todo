@@ -5,7 +5,12 @@ import {
   handleToggleTodo,
   handleRemoveTodo,
 } from './todos';
-import { GET_TODOS, ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from '../ducks/todos';
+import {
+  GET_TODOS,
+  ADD_TODO,
+  TOGGLE_TODO,
+  REMOVE_TODO,
+} from 'store/actions/todos';
 
 export function* watcherSaga() {
   yield all([

@@ -9,7 +9,7 @@ import {
   ButtonDefault,
 } from 'styles/GlobalStyles';
 import { Itodo, IProps } from 'config';
-import { toggleTodo, removeTodo } from 'redux/ducks/todos';
+import { toggleTodo, removeTodo } from 'store/actions/todos';
 
 const TodoList: React.FC<IProps> = ({ todos }) => {
   const dispatch = useDispatch();

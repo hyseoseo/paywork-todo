@@ -6,7 +6,7 @@ import {
   getTodos,
   toggleTodo,
   removeTodo,
-} from '../ducks/todos';
+} from 'store/actions/todos';
 import { BASE_URL, SORT_OPTION } from 'config';
 
 // GET_TODO 액션 발생하면 api.get하여 응답 데이터 todolist로 state를 갱신함

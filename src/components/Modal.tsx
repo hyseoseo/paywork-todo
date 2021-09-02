@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import ReactDOM, { createPortal } from 'react-dom';
 import { css } from '@emotion/react';
 import { BOX_STYLE, COLOR_STYLE, FONT_SIZE_STYLE } from 'styles/GlobalStyles';
-import { RootState } from 'redux/configureStore';
-import { hideModal } from 'redux/ducks/modal';
+import { RootState } from 'store/configureStore';
+import { hideModal } from 'store/actions/modal';
 
 const Modal: React.FC = () => {
   const dispatch = useDispatch();

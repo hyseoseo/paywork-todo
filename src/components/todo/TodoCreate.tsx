@@ -7,8 +7,8 @@ import {
   COLOR_STYLE,
   FONT_SIZE_STYLE,
 } from 'styles/GlobalStyles';
-import { addTodo } from 'redux/ducks/todos';
-import { showModal } from 'redux/ducks/modal';
+import { addTodo } from 'store/actions/todos';
+import { showModal } from 'store/actions/modal';
 
 const TodoCreate: React.FC = () => {
   const dispatch = useDispatch();
