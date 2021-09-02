@@ -17,6 +17,7 @@ $ npm start
 ## 구현 사항
 
 - 서버 url 이용한 TODO list 구현
+  (JSON server + Heroku에 배포한 fake server 이용하였습니다. https://paywork-todos.herokuapp.com)
 - TypeScript + redux + redux-saga 사용
 <br>
 
