@@ -4,7 +4,7 @@ import {
   handleNewTodo,
   handleToggleTodo,
   handleRemoveTodo,
-} from './handlers/todos';
+} from './todos';
 import { GET_TODOS, ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from '../ducks/todos';
 
 export function* watcherSaga() {
