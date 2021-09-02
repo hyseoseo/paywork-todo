@@ -28,3 +28,5 @@ TypeScript, React, Redux, Redux-saga, emotion, react-icons
 <br>
 
 ## Reference
+- Implement Redux-Saga in your React TypeScript Project (https://medium.com/edonec/implement-redux-saga-in-your-react-typescript-project-1d79c4a2d726)
+- Get Data from API (https://www.youtube.com/watch?v=1K26DIKt3w8)
