@@ -6,7 +6,7 @@ import TodoContainer from 'components/todo/TodoContainer';
 
 export default function App() {
   const dispatch = useDispatch();
-  const todos = useSelector((state: RootState) => state.todos);
+  const todos = useSelector((state: RootState) => state.todos.todos);
 
   //getTodos 액션 생성 함수 dispatch하여 handleGetTodos saga 호출
   useEffect(() => {

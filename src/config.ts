@@ -10,5 +10,5 @@ export interface Itodo {
 }
 
 export interface IProps {
-  todos: Itodo[];
+  todos: Itodo[] | undefined;
 }

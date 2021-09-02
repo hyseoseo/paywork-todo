@@ -5,14 +5,17 @@ import { IProps } from 'config';
 
 const TodoLeft: React.FC<IProps> = ({ todos }) => {
   //undone task 개수 구하여 표시
-  const undoneTasks: number = todos.filter(
-    (todo) => todo.isChecked === false,
-  ).length;
+  const undoneTasks: number | undefined =
+    todos && todos.filter((todo) => todo.isChecked === false).length;
 
   return (
     <div css={Wrapper}>
       <span css={TextContainer}>
-        <p css={Text}>{undoneTasks} tasks left</p>
+        <p css={Text}>
+          {undoneTasks === undefined
+            ? 'loading...'
+            : `${undoneTasks} tasks left`}
+        </p>
       </span>
     </div>
   );
