@@ -8,6 +8,7 @@ import {
   FONT_SIZE_STYLE,
 } from 'styles/GlobalStyles';
 import { addTodo } from 'redux/ducks/todos';
+import { showModal } from 'redux/ducks/modal';
 
 const TodoCreate: React.FC = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,10 @@ const TodoCreate: React.FC = () => {
   //addTodo 액션 생성 함수 호출하여 handleNewTodo saga 호출
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+    if (!value) {
+      dispatch(showModal('할 일을 입력해주세요!'));
+      return;
+    }
     dispatch(addTodo(value));
     setValue('');
   };
@@ -26,17 +31,19 @@ const TodoCreate: React.FC = () => {
   };
 
   return (
-    <form css={Form} onSubmit={handleSubmit}>
-      <input
-        value={value}
-        onChange={handleChange}
-        css={Input}
-        placeholder="Enter What to do..."
-      />
-      <button css={AddBtn}>
-        <FaPlus />
-      </button>
-    </form>
+    <>
+      <form css={Form} onSubmit={handleSubmit}>
+        <input
+          value={value}
+          onChange={handleChange}
+          css={Input}
+          placeholder="Enter what to do..."
+        />
+        <button css={AddBtn}>
+          <FaPlus />
+        </button>
+      </form>
+    </>
   );
 };
 
@@ -45,6 +52,7 @@ export default TodoCreate;
 const Form = css`
   width: 50%;
   height: 40px;
+  max-width: 50%;
   display: flex;
   align-items: center;
   position: absolute;

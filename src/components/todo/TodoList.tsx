@@ -32,6 +32,7 @@ const TodoList: React.FC<IProps> = ({ todos }) => {
           <li css={List} key={todo.id}>
             <input
               type="checkbox"
+              css={Checkbox}
               checked={todo.isChecked}
               onChange={(e) => handleCheck(e, todo.id)}
             />
@@ -50,6 +51,7 @@ export default TodoList;
 const Container = css`
   margin-top: 10px;
   width: 100%;
+  max-width: 768px;
 `;
 
 const List = css`
@@ -62,17 +64,19 @@ const List = css`
   box-shadow: ${BOX_STYLE.shadow};
   margin-bottom: 1rem;
   transition: all 0.2s;
-  cursor: move;
   display: flex;
   align-items: center;
-
-  &:hover {
-    transform: translateY(-3px);
-  }
 
   &:first-of-type {
     margin-top: 3px;
   }
+`;
+
+const Checkbox = css`
+  outline: none !important;
+  cursor: pointer;
+  background: lightgray;
+  border: 1px solid ${COLOR_STYLE.greyDarker};
 `;
 
 const Text = css`

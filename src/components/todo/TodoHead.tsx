@@ -16,6 +16,7 @@ export default TodoHead;
 
 const Header = css`
   width: 100vw;
+  max-width: 1256px;
   background-color: ${COLOR_STYLE.primary};
   padding: 1.5rem 1.75rem;
   box-shadow: ${BOX_STYLE.shadow};

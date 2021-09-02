@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'redux/configureStore';
 import { getTodos } from 'redux/ducks/todos';
-import TodoContainer from 'components/TodoContainer';
+import TodoContainer from 'components/todo/TodoContainer';
 
 export default function App() {
   const dispatch = useDispatch();

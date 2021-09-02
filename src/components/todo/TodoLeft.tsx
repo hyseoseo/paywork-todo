@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import { COLOR_STYLE, FlexCenter, FONT_SIZE_STYLE } from 'styles/GlobalStyles';
 import { IProps } from 'config';
 
-const TodoBoundary: React.FC<IProps> = ({ todos }) => {
+const TodoLeft: React.FC<IProps> = ({ todos }) => {
   //undone task 개수 구하여 표시
   const undoneTasks: number = todos.filter(
     (todo) => todo.isChecked === false,
@@ -18,7 +18,7 @@ const TodoBoundary: React.FC<IProps> = ({ todos }) => {
   );
 };
 
-export default TodoBoundary;
+export default TodoLeft;
 
 const Wrapper = css`
   position: sticky;

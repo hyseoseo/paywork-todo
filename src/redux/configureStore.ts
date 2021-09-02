@@ -1,10 +1,12 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import modalReducer from './ducks/modal';
 import todoReducer from './ducks/todos';
 import { watcherSaga } from './sagas/rootSaga';
 
 export const rootReducer = combineReducers({
   todos: todoReducer,
+  modal: modalReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
